@@ -21,6 +21,7 @@ const Login = () => {
     console.log('Login as Guest');
   };
 
+
   return (
     <div className="flex items-center justify-center w-screen h-screen bg-center bg-cover" style={{backgroundImage: "url('/images/login/loginbg.jpg')"}}>
       <div className="text-white text-center min-w-[300px] flex flex-col justify-center">
