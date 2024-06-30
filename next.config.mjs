@@ -11,14 +11,14 @@ const nextConfig = {
     }
     return config;
   },
-  images: {
-    remotePatterns: [
-      {
-        protocol: 'https',
-        hostname: '',
-      },
-    ],
-  },
+  // images: {
+  //   remotePatterns: [
+  //     {
+  //       protocol: 'https',
+  //       hostname: '',
+  //     },
+  //   ],
+  // },
   experimental: {
     turbo: {
       resolveExtensions: [
