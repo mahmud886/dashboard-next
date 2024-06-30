@@ -1,4 +1,4 @@
-@tailwind base;
+  @tailwind base;
   @tailwind components;
   @tailwind utilities;
 
@@ -72,5 +72,11 @@
     }
     body {
       @apply bg-background text-foreground;
+    }
+  }
+
+  @layer components {
+    .container {
+      @apply max-w-[95%] mx-auto;
     }
   }
