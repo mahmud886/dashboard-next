@@ -11,14 +11,14 @@ const nextConfig = {
     }
     return config;
   },
-  // images: {
-  //   remotePatterns: [
-  //     {
-  //       protocol: 'https',
-  //       hostname: '',
-  //     },
-  //   ],
-  // },
+  images: {
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'image.tmdb.org',
+      },
+    ],
+  },
   experimental: {
     turbo: {
       resolveExtensions: [
