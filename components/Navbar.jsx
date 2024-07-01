@@ -74,9 +74,7 @@ export default function Navbar () {
 
   return (
     <div className='container flex justify-between items-center my-2'>
-
       <Logo/>
-
       <div className='hidden md:flex'>
         <NavigationMenu>
           <NavigationMenuList>

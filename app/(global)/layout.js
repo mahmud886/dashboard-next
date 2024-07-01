@@ -2,6 +2,7 @@
 import { ThemeProvider } from "@/components/theme-provider"
 import { Poppins } from "next/font/google";
 import "../globals.css";
+import 'swiper/css';
 import Navbar from "@/components/Navbar";
 
 const poppins = Poppins({ subsets: ["latin"], display: 'swap', weight: ['300', '400', '500', '600', '700', '900'] });
