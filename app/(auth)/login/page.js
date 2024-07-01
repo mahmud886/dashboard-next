@@ -42,7 +42,7 @@ const Login = () => {
           className="btn bg-[#2573CB] px-4 pt-1 mb-6 rounded-full text-white border-none hover:bg-[#164377]"
         >
           <i className="fa fa-facebook-f"></i>
-          Connect with Facebook
+          Connect with Google
         </button>
 
         <button onClick={loginAsGuest} className="pt-[30px] text-white border-none underline">
