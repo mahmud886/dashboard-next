@@ -120,7 +120,7 @@ const CoverflowSlider = () => {
               effect="coverflow"
               grabCursor={true}
               centeredSlides={true}
-              slidesPerView={5}
+              slidesPerView={4}
               autoplay={{ delay: 5000 }}
               coverflowEffect={{
                 rotate: -10,

@@ -1,7 +1,7 @@
 "use client"
 import React, { useState, useEffect, useRef } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { EffectCoverflow, Pagination, Autoplay  } from 'swiper/modules';
+import { EffectCoverflow, Navigation, Autoplay  } from 'swiper/modules';
 import 'swiper/css/autoplay';
 
 // Import Swiper styles
@@ -72,27 +72,27 @@ const MovieCardSlider = () => {
 
 
   return (
-    <div className="relative h-auto py-6 w-screen-full">
-      <div className="slider-header px-2.5 md:px-16">
+    <div className="container relative h-auto w-screen-full py-5">
+      <div className="slider-header">
         <h3 className="flex justify-between mb-5 title">
           <span className="text-black dark:text-white text-[24px] md:text-[28px] font-semibold antialiased">Bollywood Movies</span>
           <a className="more-btn text-black dark:text-white text-[16px] md:text-[20px] font-500 antialiased">More <i className="fa fa-angles-right" aria-hidden="true"></i></a>
         </h3>
       </div>
       <div ref={swiperRef} className="swiper hollywoodMoviesSwiper pl-2.5 md:pl-16 swiper-initialized swiper-horizontal swiper-free-mode swiper-backface-hidden">
-        {/*<div className="swiper-wrapper" id="BollywoodMoviesCards" aria-live="polite">*/}
-        {/*  */}
-        {/*</div>*/}
-
         <Swiper
-          slidesPerView={8}
+          slidesPerView="auto"
           spaceBetween={10}
           pagination={{
             clickable: true,
           }}
           breakpoints={{
+            375: {
+              slidesPerView: 3,
+              spaceBetween: 10,
+            },
             640: {
-              slidesPerView: 5,
+              slidesPerView: 4,
               spaceBetween: 10,
             },
             768: {
@@ -104,10 +104,16 @@ const MovieCardSlider = () => {
               spaceBetween: 20,
             },
           }}
+          navigation={{
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+          }}
+          modules={[Navigation, Autoplay]}
           className="mySwiper"
           >
           {moviesData.map((item) => (
-            <SwiperSlide key={item.id}>
+            <SwiperSlide key={item.id} className="swiper-slide commonVideoCard swiper-slide-active"
+                         style={{width: '147.125px', marginRight: '20px'}}>
               <MovieCard
                 key={item.id}
                 img={item.poster_path}
