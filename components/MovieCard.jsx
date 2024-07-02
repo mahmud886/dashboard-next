@@ -51,7 +51,6 @@ const MovieCard = ({ id, title, img, imdbRating, youtubeUrl }) => {
                 <FontAwesomeIcon icon={faStar} className='text-[#FAFF00]' />
               </div>
               <span>{parseFloat(imdbRating).toFixed(2)}</span>
-              <span>{parseFloat(imdbRating).toFixed(2)}</span>
             </div>
           </div>
         </div>

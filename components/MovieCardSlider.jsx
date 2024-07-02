@@ -6,7 +6,6 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 
 // Import Swiper styles
 import MovieCard from '@/components/MovieCard';
-import { getContents } from '@/serivces/getContents';
 import { faAngleRight } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Link from 'next/link';
@@ -14,25 +13,13 @@ import 'swiper/css';
 import 'swiper/css/effect-coverflow';
 import 'swiper/css/pagination';
 
-const MovieCardSlider = () => {
-  const [contentData, setContentData] = useState([]);
-  useEffect(() => {
-    const fetchUser = async () => {
-      try {
-        let data = await getContents(); // Replace 'user-id' with actual user ID
-        data = JSON.parse(data);
-        setContentData(data?.data?.contents);
-        console.log(data);
-      } catch (error) {
-        console.error('Error fetching user:', error);
-      }
-    };
-    fetchUser();
-  }, []);
+import {movieData} from "@/utils/slider-data";
 
+const MovieCardSlider = () => {
+  const [moviesData] = useState(movieData);
   const swiperRef = useRef(null);
 
-  console.log(contentData);
+
 
   return (
     <div className='container relative h-auto py-5 w-screen-full'>
@@ -85,16 +72,16 @@ const MovieCardSlider = () => {
           }}
           modules={[Navigation, Autoplay]}
           className='mySwiper'>
-          {contentData?.map((item) => (
+          {moviesData?.map((item) => (
             <SwiperSlide
               key={item.id}
               className='swiper-slide commonVideoCard swiper-slide-active'
               style={{ width: '147.125px', marginRight: '20px' }}>
               <MovieCard
                 key={item.id}
-                img={item?.poster}
-                title={item.contentName}
-                imdbRating={item.rating}
+                img={item?.poster_path}
+                title={item.original_title}
+                imdbRating={item.vote_average}
                 youtubeUrl={item?.trailerUri}
               />
             </SwiperSlide>
