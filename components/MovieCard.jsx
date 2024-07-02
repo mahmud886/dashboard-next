@@ -10,7 +10,6 @@ const MovieCard = ({ id, title, img, imdbRating, youtubeUrl }) => {
 
   const videoId = getYouTubeVideoId(youtubeUrl);
 
-  console.log(videoId);
 
   const playTrailer = () => {
     setIsVideoPlaying(true);
@@ -70,14 +69,18 @@ const MovieCard = ({ id, title, img, imdbRating, youtubeUrl }) => {
       </div>
       {/* Video Player */}
       {isVideoPlaying && (
-        <div className='absolute top-0 left-0 flex items-center justify-center w-full h-full bg-black bg-opacity-70'>
+        <div className='absolute top-0 left-0 flex items-center justify-center w-full h-full bg-black bg-opacity-70 overflow-hidden'>
           <iframe
-            src={`https://www.youtube.com/embed/${videoId}?autoplay=1&mute=1&controls=0`} // Autoplay, mute, and hide controls
+            src={`https://www.youtube.com/embed/${videoId}?autoplay=1&mute=1&controls=0&showinfo=0&origin=http%3A%2F%2F103.68.104.71&playsinline=1&rel=0&iv_load_policy=3&modestbranding=1&vq=hd720&enablejsapi=1&widgetid=37`}
             width='100%'
             height='100%'
             title='YouTube Video Player'
-            allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture'
-            onLoad={onPlayerReady}></iframe>
+            allow='accelerometer; autoplay; encrypted-media'
+            allowFullScreen
+            onLoad={onPlayerReady}
+          className='scale-150 transition-all duration-300 ease-in-out'
+          >
+          </iframe>
           <button onClick={toggleMute} className='absolute text-white top-2 right-2'>
             Mute
           </button>
