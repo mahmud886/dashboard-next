@@ -1,82 +1,30 @@
 "use client"
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useRef } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { EffectCoverflow, Navigation, Autoplay  } from 'swiper/modules';
+import { Navigation, Autoplay  } from 'swiper/modules';
 import 'swiper/css/autoplay';
-
-// Import Swiper styles
 import 'swiper/css';
 import 'swiper/css/effect-coverflow';
 import 'swiper/css/pagination';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faAngleRight } from '@fortawesome/free-solid-svg-icons';
 import MovieCard from "@/components/MovieCard";
+import Link from "next/link";
 
 import {movieData} from "@/utils/slider-data";
 
 const MovieCardSlider = () => {
   const [moviesData] = useState(movieData);
 
-  const fakeSliderData2 = [
-    {
-      id: 0,
-      img: "http://103.68.104.71//Admin/main/images/tt14672882/screen//hYCqInu2vhRysytIyifA41iw2Ek.jpg",
-      lThumb: "http://103.68.104.71//Admin/main/images/tt14672882/poster//Ah3pJ3iuX28PKHjGLyIrEsFVq5q.jpg",
-      title: "The Tomorrow Job",
-      videoId: "zeKp69CY47Y",
-      titleImg: "http://103.68.104.71//Admin/main/images/tt14672882/logo/tt14672882.png",
-      movieLink: "http://103.68.104.71/Data/movies/hollywood/2023/The Tomorrow Job (2023)/The.Tomorrow.Job.2023.720p.WEBRip.x264.AAC-[YTS.MX].mp4",
-      rating: 4.85,
-      year: 2023,
-      genre: [],
-      category: "Si-Fi",
-      length: "2h 12m",
-      isMuted: false,
-    },
-    {
-      id: 1,
-      img: "http://103.68.104.71//Admin/main/images/tt0830515/screen//3CqMIX3ZlrD0pU3fpBL6DM0Cneb.jpg",
-      lThumb: "http://103.68.104.71//Admin/main/images/tt0830515/poster//e3DXXLJHGqMx9yYpXsql1XNljmM.jpg",
-      title: "James Bond Quantum of Solace",
-      titleImg: "http://103.68.104.71//Admin/main/images/tt0830515/logo/tt0830515.png",
-      videoId: "BBqYaFEWBxI",
-      movieLink: "http://103.68.104.71/Data/movies/hollywood/2008/James Bond Quantum of Solace (2008)/James.Bond.Quantum.of.Solace.2008.720p.BRrip.x264.YIFY.mp4",
-      rating: 3.75,
-      year: 2023,
-      genre: [],
-      category: "Action",
-      length: "1h 39m",
-      isMuted: false,
-    },
-    // Add more slider data as needed
-  ];
-
   const swiperRef = useRef(null);
-
-
-
-  const playTrailerCommonVideoCard = (trailerId, playerId) => {
-    // Implement your logic for playing the video here
-    // Example: console.log(`Playing video for trailer ID ${trailerId} and player ID ${playerId}`);
-  };
-
-  const stopTrailerCommonVideoCard = (trailerId, playerId) => {
-    // Implement your logic for stopping the video here
-    // Example: console.log(`Stopping video for trailer ID ${trailerId} and player ID ${playerId}`);
-  };
-
-  const videoCardMuteToggle = (playerId) => {
-    // Implement your logic for muting/unmuting the video here
-    // Example: console.log(`Toggling mute for player ID ${playerId}`);
-  };
-
-
-
 
   return (
     <div className="container relative h-auto w-screen-full py-5">
       <div className="slider-header">
         <h3 className="flex justify-between mb-5 title">
           <span className="text-black dark:text-white text-[24px] md:text-[28px] font-semibold antialiased">Bollywood Movies</span>
-          <a className="more-btn text-black dark:text-white text-[16px] md:text-[20px] font-500 antialiased">More <i className="fa fa-angles-right" aria-hidden="true"></i></a>
+          <Link href='/' className="flex items-center justify-center gap-1 hover:text-red-700 dark:hover:text-red-700 more-btn text-black dark:text-white text-[16px] md:text-[20px] font-500 antialiased">
+            More <span className='inline-flex tracking-tight'><FontAwesomeIcon icon={faAngleRight} /> <FontAwesomeIcon icon={faAngleRight} /></span></Link>
         </h3>
       </div>
       <div ref={swiperRef} className="swiper hollywoodMoviesSwiper pl-2.5 md:pl-16 swiper-initialized swiper-horizontal swiper-free-mode swiper-backface-hidden">
@@ -110,9 +58,9 @@ const MovieCardSlider = () => {
           }}
           modules={[Navigation, Autoplay]}
           className="mySwiper"
-          >
+        >
           {moviesData.map((item) => (
-            <SwiperSlide key={item.id} className="swiper-slide commonVideoCard swiper-slide-active"
+            <SwiperSlide key={item.id} className="swiper-slide swiper-slide-active"
                          style={{width: '147.125px', marginRight: '20px'}}>
               <MovieCard
                 key={item.id}
