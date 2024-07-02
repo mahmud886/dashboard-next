@@ -75,7 +75,7 @@ const MovieCardSlider = () => {
           {moviesData?.map((item) => (
             <SwiperSlide
               key={item.id}
-              className='swiper-slide commonVideoCard swiper-slide-active'
+              className='swiper-slide commonVideoCard swiper-slide-active '
               style={{ width: '147.125px', marginRight: '20px' }}>
               <MovieCard
                 key={item.id}
