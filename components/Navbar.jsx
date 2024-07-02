@@ -179,7 +179,7 @@ export default function Navbar () {
               <DrawerDescription>
                 <div className="sidebar-navlist">
                   <Link
-                    href="/parental-lock"
+                    href="/profile"
                     className="block rounded-none border-b-2 border-[#909090]"
                   >
                     <label

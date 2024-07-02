@@ -14,7 +14,7 @@ const ParentalLock = () => {
                     Parental Lock
                 </button>
             </div>
-            <div className="mt-20 rounded-[40px] bg-zinc-300 h-screen"
+            <div className="bg-gradient-to-b from-[#E9E9E9] to-transparent dark:from-[#2A2B2C] dark:to-[rgba(0,0,0,1)] dark:via-[rgba(0,0,0,1)] w-full h-full flex flex-col items-center absolute z-1 top-52 rounded-t-3xl gap-8 text-white shadow-inner"
                  style={{boxShadow: '0px 8px 20px rgba(0,0,0,0.5) inset'}}>
                 <div className="flex justify-center items-center">
                     <Image src="/images/parental-lock/parental-lock.png" alt="" width={130} height={124}
@@ -22,7 +22,7 @@ const ParentalLock = () => {
                 </div>
                 <div className="flex justify-center items-center">
                     <div id="parentalLockContainer"
-                         className="flex flex-col items-center gap-[1.5rem] w-full md:w-[40%] px-2 text-center">
+                         className="flex flex-col items-center gap-[1.5rem] w-full md:w-[60%] px-2 text-center">
                         <p className="text-[22px] text-black dark:text-white md:text-2xl font-bold">Lock Content with
                             your
                             personal PIN</p>

@@ -499,3 +499,42 @@
   .homepageCardSliderWrap .swiper-button-next {
     right:0;
   }
+
+
+  .placeholderColorWhite::placeholder {
+    color: #fff; /* Change this to the desired color */
+  }
+
+  .navMenuItem a.active {
+    border-bottom: 2px solid #e70101;
+  }
+
+/*Custom radio buttoon*/
+  .custom-radio-for-sex {
+    appearance: none;
+    width: 1.5em;
+    height: 1.5em;
+    border: 0.15em solid red;
+    border-radius: 50%;
+    outline: none;
+    cursor: pointer;
+    position: relative;
+  }
+
+  .custom-radio-for-sex::before {
+    content: '';
+    display: block;
+    width: 1em; /* Slightly smaller to create space */
+    height: 1em; /* Slightly smaller to create space */
+    border-radius: 50%;
+    background-color: transparent;
+    transition: background-color 0.2s ease-in-out;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .custom-radio-for-sex:checked::before {
+    background-color: red;
+  }
