@@ -68,17 +68,17 @@ export default function Navbar() {
   };
 
   return (
+    // <nav className=" fixed w-full top-0 glass-bg-gradient z-[1000]" id="navbarWrap">
     <div className='container flex items-center justify-between my-2'>
       <Logo />
       <div className='hidden md:flex'>
         <NavigationMenu>
           <NavigationMenuList>
             <NavigationMenuItem>
-              <NavigationMenuTrigger className='transition ease-in-out hover:text-red-700 dark:hover:text-red-700'>
+              <NavigationMenuTrigger>
                 <Link href='/movies'>Movies</Link>
               </NavigationMenuTrigger>
               <NavigationMenuContent>
-                {/*<ul className="grid gap-3 p-6 md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr]">*/}
                 <ul className='grid gap-4 p-6 md:w-[650px] lg:w-[650px] lg:grid-cols-4'>
                   {movieCategories.map((category, index) => (
                     <li
@@ -96,7 +96,7 @@ export default function Navbar() {
               </NavigationMenuContent>
             </NavigationMenuItem>
             <NavigationMenuItem>
-              <NavigationMenuTrigger>
+              <NavigationMenuTrigger >
                 <Link href='/tv-series'>Tv Series</Link>
               </NavigationMenuTrigger>
               <NavigationMenuContent>
@@ -483,6 +483,7 @@ export default function Navbar() {
         {/*</div>*/}
       </div>
     </div>
+    // </nav>
   );
 }
 

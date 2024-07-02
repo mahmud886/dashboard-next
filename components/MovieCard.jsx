@@ -1,10 +1,41 @@
+import { useState } from 'react';
 import { faStar } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Image from 'next/image';
+import {getYouTubeVideoId} from "@/utils/utils";
 
-const MovieCard = ({ id, title, img, imdbRating }) => {
+const MovieCard = ({ id, title, img, imdbRating, youtubeUrl }) => {
+  const [isVideoPlaying, setIsVideoPlaying] = useState(false);
+  const [player, setPlayer] = useState(null);
+
+
+  const videoId = getYouTubeVideoId(youtubeUrl);
+
+  console.log(videoId);
+
+  const playTrailer = () => {
+    setIsVideoPlaying(true);
+  };
+
+  const pauseTrailer = () => {
+    setIsVideoPlaying(false);
+  };
+
+  const toggleMute = () => {
+    if (player) {
+      const isMuted = player.isMuted();
+      player.mute(!isMuted);
+    }
+  };
+
+  const onPlayerReady = (event) => {
+    setPlayer(event.target);
+  };
+
   return (
-    <div className='relative w-full overflow-hidden bg-transparent rounded-md shadow-xl card bg-base-100 image-full before:hidden'>
+    <div className='relative w-full overflow-hidden bg-transparent rounded-md shadow-xl card bg-base-100 image-full before:hidden'
+         onMouseEnter={playTrailer}
+         onMouseLeave={pauseTrailer}>
       <figure className='relative w-full h-full overflow-hidden rounded-md'>
         {img ? (
           <Image src={img} alt={title} width={210} height={320} className='w-full h-full rounded-md' />
@@ -36,6 +67,25 @@ const MovieCard = ({ id, title, img, imdbRating }) => {
           </div>
         </div>
       </div>
+      {/* Video Player */}
+      {isVideoPlaying && (
+        <div className='absolute top-0 left-0 w-full h-full bg-black bg-opacity-70 flex items-center justify-center'>
+          <iframe
+            src={`https://www.youtube.com/embed/${videoId}?autoplay=1&mute=1&controls=0`}  // Autoplay, mute, and hide controls
+            width="100%"
+            height="100%"
+            title="YouTube Video Player"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            onLoad={onPlayerReady}>
+          </iframe>
+          <button onClick={toggleMute} className='absolute top-2 right-2 text-white'>
+            Mute
+          </button>
+          <button onClick={pauseTrailer} className='absolute top-2 left-2 text-white'>
+            Close
+          </button>
+        </div>
+      )}
     </div>
   );
 };

@@ -31,24 +31,10 @@ const MovieCardSlider = () => {
     fetchUser();
   }, []);
 
-  const [moviesData] = useState(movieData);
-
   const swiperRef = useRef(null);
 
-  const playTrailerCommonVideoCard = (trailerId, playerId) => {
-    // Implement your logic for playing the video here
-    // Example: console.log(`Playing video for trailer ID ${trailerId} and player ID ${playerId}`);
-  };
+  console.log(contentData)
 
-  const stopTrailerCommonVideoCard = (trailerId, playerId) => {
-    // Implement your logic for stopping the video here
-    // Example: console.log(`Stopping video for trailer ID ${trailerId} and player ID ${playerId}`);
-  };
-
-  const videoCardMuteToggle = (playerId) => {
-    // Implement your logic for muting/unmuting the video here
-    // Example: console.log(`Toggling mute for player ID ${playerId}`);
-  };
 
   return (
     <div className='container relative h-auto py-5 w-screen-full'>
@@ -106,7 +92,7 @@ const MovieCardSlider = () => {
               key={item.id}
               className='swiper-slide commonVideoCard swiper-slide-active'
               style={{ width: '147.125px', marginRight: '20px' }}>
-              <MovieCard key={item.id} img={item?.poster} title={item.contentName} imdbRating={item.rating} />
+              <MovieCard key={item.id} img={item?.poster} title={item.contentName} imdbRating={item.rating} youtubeUrl={item?.trailerUri} />
             </SwiperSlide>
           ))}
         </Swiper>
