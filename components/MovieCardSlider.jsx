@@ -7,7 +7,6 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 // Import Swiper styles
 import MovieCard from '@/components/MovieCard';
 import { getContents } from '@/serivces/getContents';
-import { movieData } from '@/utils/slider-data';
 import { faAngleRight } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Link from 'next/link';
@@ -33,8 +32,7 @@ const MovieCardSlider = () => {
 
   const swiperRef = useRef(null);
 
-  console.log(contentData)
-
+  console.log(contentData);
 
   return (
     <div className='container relative h-auto py-5 w-screen-full'>
@@ -92,7 +90,13 @@ const MovieCardSlider = () => {
               key={item.id}
               className='swiper-slide commonVideoCard swiper-slide-active'
               style={{ width: '147.125px', marginRight: '20px' }}>
-              <MovieCard key={item.id} img={item?.poster} title={item.contentName} imdbRating={item.rating} youtubeUrl={item?.trailerUri} />
+              <MovieCard
+                key={item.id}
+                img={item?.poster}
+                title={item.contentName}
+                imdbRating={item.rating}
+                youtubeUrl={item?.trailerUri}
+              />
             </SwiperSlide>
           ))}
         </Swiper>

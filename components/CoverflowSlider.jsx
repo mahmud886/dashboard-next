@@ -87,7 +87,7 @@ const CoverflowSlider = () => {
                 </a>
               </div>
               <p
-                className='text-sm text-center text-black  md:text-md md:text-start dark:text-white'
+                className='text-sm text-center text-black md:text-md md:text-start dark:text-white'
                 id='coSliderMovieDescription'>
                 Four women — a travel blogger, her friend's biker granny, a makeshift mechanic and a young girl set to
                 be married — ride to the highest motorable

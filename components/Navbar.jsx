@@ -96,7 +96,7 @@ export default function Navbar() {
               </NavigationMenuContent>
             </NavigationMenuItem>
             <NavigationMenuItem>
-              <NavigationMenuTrigger >
+              <NavigationMenuTrigger>
                 <Link href='/tv-series'>Tv Series</Link>
               </NavigationMenuTrigger>
               <NavigationMenuContent>
