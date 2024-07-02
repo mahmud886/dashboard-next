@@ -1,15 +1,15 @@
 "use client"
-import {useEffect, useRef, useState} from 'react';
-import { Swiper, SwiperSlide } from 'swiper/react';
-import { EffectCoverflow, Pagination, Autoplay  } from 'swiper/modules';
+import { useEffect, useRef, useState } from 'react';
 import 'swiper/css/autoplay';
+import { Autoplay, EffectCoverflow } from 'swiper/modules';
+import { Swiper, SwiperSlide } from 'swiper/react';
 
 // Import Swiper styles
 import 'swiper/css';
 import 'swiper/css/effect-coverflow';
 import 'swiper/css/pagination';
 
-import {fakeSliderData} from "@/utils/data";
+import { fakeSliderData } from "@/utils/data";
 import Image from "next/image";
 
 
@@ -71,11 +71,11 @@ const CoverflowSlider = () => {
       <div>
         <div className=' w-full h-[100vh] bg-gray-800 relative overflow-hidden'>
           <div className='trailerImage w-full h-[100vh] absolute'>
-            <img
+            {/* <img
               src={content.lThumb}
               alt=''
               className='w-full h-[100vh] object-cover'
-            />
+            /> */}
           </div>
 
           <div className='w-full h-[40px] bottom-[0px] absolute z-[10] bg-[#f1f5f9] dark:bg-black'></div>
@@ -96,9 +96,9 @@ const CoverflowSlider = () => {
                   className="rounded-full px-[12px] py-[4px] text-sm md:text-md font-semibold bg-darkMenu text-black dark:text-white"
                 >{content.length}</a>
               </div>
-              <p className=" text-sm md:text-md text-center md:text-start text-black dark:text-white"
+              {/* <p className=" text-sm md:text-md text-center md:text-start text-black dark:text-white"
                  id="coSliderMovieDescription">Four women — a travel blogger, her friend's biker granny, a makeshift
-                mechanic and a young girl set to be married — ride to the highest motorable</p>
+                mechanic and a young girl set to be married — ride to the highest motorable</p> */}
               <div className="actionButtonsWrap flex justify-center md:justify-start gap-4 my-2">
                 <button
                   className="btn rounded-[50%]  bg-[#C1141E] w-[48px] h-[48px] text-white border-none hover:bg-[#b4111b]">

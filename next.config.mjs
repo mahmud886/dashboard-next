@@ -18,6 +18,9 @@ const nextConfig = {
         hostname: 'image.tmdb.org',
       },
     ],
+   
+    domains: ['image.tmdb.org'],
+    
   },
   experimental: {
     turbo: {
