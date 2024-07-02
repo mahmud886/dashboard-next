@@ -29,7 +29,7 @@ const MovieRequestPage = () => {
                       <label className="font-bold text-black dark:text-white text-md">Description</label>
                   </div>
                   <div className="col-span-12 md:col-span-9">
-            <textarea type="text" placeholder="Write a message"
+            <textarea placeholder="Write a message"
                       className="placeholder-black dark:placeholder-gray-100 w-full min-h-[100px] px-5 py-3 text-sm text-black dark:text-white bg-white bg-opacity-20 border border-gray-500 rounded-xl"
             ></textarea>
                   </div>
