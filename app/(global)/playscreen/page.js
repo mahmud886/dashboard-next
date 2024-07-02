@@ -1,5 +1,6 @@
+'use client'
 import { getContentByShareUrl } from '@/serivces/getContentByShareUrl';
-import React from 'react';
+import React,{useState,useEffect} from 'react';
 
 const PlayScreen = () => {
   const [shareData, setShareData] = useState([]);
