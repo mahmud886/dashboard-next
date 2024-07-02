@@ -3,7 +3,7 @@ import Image from "next/image";
 const UserProfileUpdateForm = () => {
     return (
         <div
-            className="bg-gradient-to-b from-[#E9E9E9] to-transparent dark:from-[#2A2B2C] dark:to-[rgba(0,0,0,1)] dark:via-[rgba(0,0,0,1)] absolute flex flex-col items-center w-full h-full gap-8 text-white z-1 top-52 rounded-t-3xl"
+            className="bg-gradient-to-b from-[#E9E9E9] to-transparent dark:from-[#2A2B2C] dark:to-[rgba(0,0,0,1)] dark:via-[rgba(0,0,0,1)] absolute flex flex-col items-center w-full h-screen gap-8 text-white z-1 top-52 rounded-t-3xl"
             style={{boxShadow: '0px 8px 20px rgba(0, 0, 0, 0.5) inset'}}>
             <form noValidate action="" className="ng-untouched ng-pristine ng-valid">
                 <div className="flex flex-col justify-center items-center flex-nowrap">
