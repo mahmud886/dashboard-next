@@ -28,7 +28,7 @@ const UserProfileForm = () => {
 
     };
     return (
-        <div className="container">
+        <div>
             {showUpdateProfile ? <div className="mt-16">
                     <UserProfileUpdateForm/>
                 </div>
