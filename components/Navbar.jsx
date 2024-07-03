@@ -76,7 +76,7 @@ export default function Navbar() {
           <NavigationMenuList>
             <NavigationMenuItem>
               <NavigationMenuTrigger>
-                <Link href='/movies'>Movies</Link>
+                <Link href='/components/SingleMovie'>Movies</Link>
               </NavigationMenuTrigger>
               <NavigationMenuContent>
                 <ul className='grid gap-4 p-6 md:w-[650px] lg:w-[650px] lg:grid-cols-4'>
